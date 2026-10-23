@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="zh-CN">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>信息展开 · 原创教学演示</title>
+<style>
+*{box-sizing:border-box}body{margin:0;background:#fafbf8;color:#24332e;font:16px/1.8 system-ui,sans-serif}main{max-width:65ch;margin:auto;padding:24px}h1{font-size:25px;line-height:1.4}h2{font-size:19px}small,.muted{color:#526350}.label{font-size:12px;letter-spacing:1px;color:#326451}.essential{padding:14px 18px;border-left:4px solid #326451;background:#edf2eb}details{margin:24px 0}summary{cursor:pointer;color:#285943;padding:8px 0;min-height:44px;text-decoration:underline;text-underline-offset:4px}summary:focus-visible,button:focus-visible,input:focus-visible{outline:3px solid #946000;outline-offset:4px}.extra{border-left:2px solid #aab8a5;margin-top:8px;padding:4px 18px}fieldset{border:1px solid #b6c3b1;padding:16px;border-radius:6px}legend{font-weight:650}label{display:block;padding:9px 0;cursor:pointer}input{margin-right:8px}button{background:#326451;color:white;border:0;border-radius:5px;padding:10px 18px;font:inherit;cursor:pointer}#feedback{min-height:3em;margin-bottom:0}code{background:#edf2eb;padding:2px 5px}footer{border-top:1px solid #d6dfd1;margin-top:24px;padding-top:16px;font-size:12px}@media(max-width:480px){main{padding:18px}h1{font-size:23px}}
+</style></head><body><main>
+<p class="label">原创教学演示 · 非 GOV.UK 服务</p>
+<h1>参加一次界面学习小组</h1>
+<p>先读参加条件，再按需要展开补充说明。以下内容为虚构练习，不提供真实报名。</p>
+<section class="essential" aria-labelledby="requirements"><h2 id="requirements">每位参与者都需要知道</h2><ul><li>需要掌握基础 HTML 和 CSS。</li><li>活动需要预留 45 分钟，自备电脑。</li><li>无需付费，也不需要提交个人信息。</li></ul></section>
+<details id="help"><summary>不确定“基础 HTML 和 CSS”指什么？</summary><div class="extra"><p>能用标题、段落和链接组织一页内容，并用 CSS 调整字号、留白和颜色即可。不需要掌握框架。</p><p>例如能解释 <code>&lt;h1&gt;</code> 是标题，<code>padding</code> 调整元素内部留白。已经了解这些内容的人可以跳过这段说明。</p></div></details>
+<p class="muted">试一试：点击上面的具体问题，或用 Tab 聚焦后按 Enter / 空格展开。关闭说明后，必要条件仍然可见。</p>
+<div id="quiz"><fieldset><legend>判断练习：哪一项适合默认折叠？</legend>
+<label><input type="radio" name="answer" value="required">参加活动必须具备的基础</label>
+<label><input type="radio" name="answer" value="extra">给不熟悉术语的读者看的补充解释</label>
+<label><input type="radio" name="answer" value="cost">每个人都需要知道的费用</label>
+<button type="button" id="check-answer">检查判断</button><p id="feedback" role="status" aria-live="polite"></p>
+</fieldset></div><noscript><p>判断练习需要 JavaScript。参考答案：补充术语解释可以折叠；必要条件和费用应直接展示。上方展开控件无需 JavaScript。</p></noscript>
+<footer>用原生 details / summary 展示按需展开；样式、虚构内容与练习为本项目原创。未复刻 GOV.UK 品牌、完整组件或政府业务。</footer>
+</main><script>
+document.querySelector('#check-answer').addEventListener('click', () => {
+  const answer = document.querySelector('input[name="answer"]:checked')?.value;
+  document.querySelector('#feedback').textContent = !answer
+    ? '请先选择一项，再检查判断。'
+    : answer === 'extra'
+      ? '判断正确：补充解释只服务部分读者，可以按需展开；标题要说清里面有什么。'
+      : '再想一想：必要条件和费用影响每个人的决定，应直接展示，不能为了页面简短而隐藏。';
+});
+</script></body></html>
