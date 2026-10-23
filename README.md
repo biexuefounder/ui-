@@ -2,6 +2,14 @@
 
 从设计问题出发，理解优秀网站的结构、体验和前端实现。
 
+## 项目文档
+
+- [项目说明](docs/PROJECT.md)：需求、架构、文件职责、数据字段、已知限制与发布关系。
+- [Codex接手指南](docs/HANDOFF.md)：阅读顺序、新增案例和修改功能的流程、验证与交接格式。
+- [代理工作规则](AGENTS.md)：收录标准与协作边界。
+- [自动积累交接](docs/automation.md)：单次任务指令与尚未接通的自动化条件。
+- [验证记录](docs/verification.md)与[研究记录](docs/runs.md)：已完成检查和历史研究范围。
+
 ## 在 Codex 云端继续
 
 目标仓库：`biexuefounder/ui-`，主分支 `main`。进入 Codex 云端后选择这个仓库，先读取 `AGENTS.md`。可直接使用 `docs/automation.md` 中的单次研究指令。无需安装依赖或填写 API key；Node.js 用于检查，Python 可用于静态预览。研究来源访问需要环境具备对应网络权限。
